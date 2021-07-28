@@ -1,0 +1,26 @@
+<h2>CONTACTS</h2>
+<p style="color: green"><%= notice %></p>
+<%= form_with(model: @contact, local: true) do |form| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <ul style="color: red">
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form.label :name %>
+    <div class="name">
+        <%= form.text_field :name %>
+    </div>
+    <%= form.label :email %>
+    <div class="email">
+        <%= form.text_field :email %>
+    </div>
+    <%= form.label :content %>
+    <div class="blog_content">
+        <%= form.text_field :content %>
+    </div>
+    <%= form.submit "Create Contact"%>
+<% end %>
